@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'antiscam/style.css' %}" rel="stylesheet">
+    <title>HTML</title>
+    {% block script %}
+    {% endblock %}
+  </head>
+  <body>
+  <div class="img-container">
+    <img src={% static 'antiscam/images/protec.png' %}>
+  </div>
+  <div class="container">
+    <div class="page-container">
+      
+        <form action="{% url 'ask' %}" method="post">
+          {% csrf_token %}
+          <h1>Verifique sua mensagem<h1>
+          <br />
+          <textarea
+            name="pergunta"
+            id="pergunta"
+            cols="30"
+            rows="10"
+          >{{pergunta}}</textarea>
+          <div class="middle">
+            <input type="submit" class="enviar" name="submit" />
+          </div>
+        </form>
+      <div class="answer">
+        {% if answers %}
+        {% if boolvalores %}
+        <p>Pedidos que envolvem valores são perigosos!</p>
+        {% endif %}
+        {% if boolurge %}
+        <p>Tome cuidado, pedidos urgentes possuem risco!</p>
+        {% endif %}
+        {% if boollink %}
+        <p>Tome cuidado ao clicar em links de mensagens, faça isso somente fontes confiáveis.</p>
+        {% endif %}
+        {% if boolpessoais %}
+        <p>Dados pessoais podem ser utilizados para furtos de senha, cuidado!</p>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

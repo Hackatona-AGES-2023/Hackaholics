@@ -1,0 +1,69 @@
+body {
+    background-color: #232c57;
+
+}
+
+.container {
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    font-weight: 400;
+    color: #555;
+    background-color: #232c57;
+
+}
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.page-container {
+    margin-bottom:4rem;
+    margin: 0 auto;
+    width: 80%;
+    display:flex;
+    justify-content: center;
+}
+
+
+
+img {
+    margin:0 auto;
+    max-width: 50%;
+    margin-bottom:2rem;
+}
+
+h1 {
+    font-size:2rem;
+    margin-top:2rem;
+    color:white;
+}
+
+textarea{
+    background-color: #bcbcbc;
+    border-radius: 0.5rem;
+    width:100%;
+    margin-bottom:4rem;
+    font-size: 1.6rem;
+}
+
+form {
+    width:80%;
+}
+
+.enviar {
+    margin-bottom:4rem;
+    padding:1rem;
+}
+
+.img-container {
+    width:100%;
+    display:flex;
+}
